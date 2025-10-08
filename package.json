@@ -1,0 +1,65 @@
+{
+  "name": "xommit",
+  "version": "1.0.0",
+  "description": "Automatically generate meaningful commit messages using AI by analyzing your git changes. Save time and maintain consistent commit message quality across your projects.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "xommit": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaishab316/xommit.git"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "cli",
+    "automation",
+    "gemini",
+    "conventional-commits"
+  ],
+  "author": {
+    "name": "Shaishab Chandra Shil",
+    "url": "https://github.com/shaishab316"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/shaishab316/xommit/issues"
+  },
+  "homepage": "https://github.com/shaishab316/xommit#readme",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cac": "^6.7.14",
+    "chalk": "^5.6.2",
+    "inquirer": "^12.9.6",
+    "ora": "^9.0.0",
+    "simple-git": "^3.28.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^24.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "eslint": "^9.37.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  }
+}

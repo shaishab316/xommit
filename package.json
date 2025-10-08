@@ -1,6 +1,6 @@
 {
   "name": "xommit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Automatically generate meaningful commit messages using AI by analyzing your git changes. Save time and maintain consistent commit message quality across your projects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "bugs": {
     "url": "https://github.com/shaishab316/xommit/issues"
@@ -54,6 +54,9 @@
     "simple-git": "^3.28.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
     "@types/inquirer": "^9.0.9",
     "@types/node": "^24.7.0",
     "@typescript-eslint/eslint-plugin": "^8.46.0",

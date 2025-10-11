@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/shaishab316/xommit/compare/v1.2.0...v1.3.0) (2025-10-11)
+
+
+### Features
+
+* :sparkles: Update prompt to allow Gitmoji commit messages ([5a01155](https://github.com/shaishab316/xommit/commit/5a011553469005d198d763065fbbcde18b8efc0a))
+
 # [1.2.0](https://github.com/shaishab316/xommit/compare/v1.1.1...v1.2.0) (2025-10-08)
 
 

@@ -20,7 +20,7 @@ Contributions help make `xommit` better for everyone.
    Use semantic commit messages:
 
    ```bash
-   git commit -m "feat: add your feature"
+   xommit
    ```
 
 4. **Push your branch**
@@ -45,7 +45,7 @@ Contributions help make `xommit` better for everyone.
   ```
 
 - Keep commits small and focused.
-- Write clear commit messages using [Conventional Commits](https://www.conventionalcommits.org/).
+- Write clear commit messages using [Conventional Commits](https://www.conventionalcommits.org/) OR run `xommit`.
 
 ---
 

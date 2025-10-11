@@ -45,7 +45,7 @@ Return only the summary.`;
     // Step 2: generate final commit message using summaries
     const finalPrompt = `Based on the following summaries of code changes, generate a concise, professional git commit message.
 
-Follow conventional commit format (feat:, fix:, docs:, style:, refactor:, test:, chore:).
+Follow conventional commit format (feat:, fix:, docs:, style:, refactor:, test:, chore:), gitmoji etc. Keep semantic prefix first, :gitmoji: after the colon. then a " ".
 Keep the first line under 72 characters.
 If needed, include a detailed description after a blank line.
 

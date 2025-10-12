@@ -1,0 +1,141 @@
+{
+  "name": "xommit-vscode",
+  "displayName": "Xommit - AI Git Commit Messages",
+  "description": "Generate meaningful commit messages using AI by analyzing your git changes. Integrates directly into VS Code's Source Control.",
+  "version": "1.0.0",
+  "publisher": "shaishab316",
+  "icon": "icon.png",
+  "type": "commonjs",
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=18.0.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "gemini",
+    "conventional-commits",
+    "gitmoji",
+    "source-control",
+    "commit-message",
+    "automation",
+    "productivity"
+  ],
+  "activationEvents": [
+    "onCommand:xommit.generateCommitMessage",
+    "onCommand:xommit.configure",
+    "workspaceContains:.git"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "xommit.generateCommitMessage",
+        "title": "Xommit: Generate AI Commit Message",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "xommit.configure",
+        "title": "Xommit: Configure API Key",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "xommit.generateFromSCM",
+        "title": "Xommit: Commit Message",
+        "icon": "icon.png"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "xommit.generateFromSCM",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ],
+      "scm/inputBox": [
+        {
+          "command": "xommit.generateFromSCM",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "xommit.generateCommitMessage",
+          "when": "scmProvider == git"
+        },
+        {
+          "command": "xommit.configure"
+        },
+        {
+          "command": "xommit.generateFromSCM",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Xommit",
+      "properties": {
+        "xommit.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Google Gemini API Key (stored securely in global state)",
+          "markdownDescription": "Your Google Gemini API Key. Get one from [Google AI Studio](https://makersuite.google.com/app/apikey)"
+        },
+        "xommit.useGitmoji": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include gitmoji emojis in commit messages"
+        },
+        "xommit.autoStage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically prompt to stage unstaged files before generating commit message"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts",
+    "vsce:package": "vsce package",
+    "vsce:publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.19.0",
+    "eslint": "^8.56.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaishab316/xommit"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaishab316/xommit/issues"
+  },
+  "homepage": "https://github.com/shaishab316/xommit#readme"
+}

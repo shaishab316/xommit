@@ -2,7 +2,7 @@
 
 is a VS Code extension that leverages AI to generate meaningful and concise Git commit messages by analyzing your code changes. It integrates seamlessly into the VS Code Source Control panel, supports Gitmoji, and can optionally auto-stage changes.
 
-## ![Xommit Screenshot](./images/screenshot.png)
+## ![Xommit Screenshot](https://raw.githubusercontent.com/shaishab316/xommit/refs/heads/vscode_ext/images/screenshot.png)
 
 ## Features
 

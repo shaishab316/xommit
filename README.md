@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/npm/l/xommit.svg)](https://github.com/shaishab316/xommit/blob/main/LICENSE)
 [![Downloads](https://img.shields.io/npm/dt/xommit.svg)](https://www.npmjs.com/package/xommit)
 [![Issues](https://img.shields.io/github/issues/shaishab316/xommit.svg)](https://github.com/shaishab316/xommit/issues)
+[![Visual Studio Marketplace](https://img.shields.io/badge/Visual_Studio_Marketplace-007ACC.svg?style=flat&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=shaishab316.xommit-vscode)
 
 Automatically generate meaningful commit messages using AI by analyzing your git changes. Save time and maintain consistent commit message quality across your projects.
 
@@ -15,6 +16,12 @@ Automatically generate meaningful commit messages using AI by analyzing your git
 - CLI-based, lightweight, and easy to integrate into any workflow.
 - Supports AI-driven commit suggestions for consistent commit quality.
 - Saves time on repetitive commit message writing.
+
+---
+
+## VsCode Extension
+## ![Xommit Screenshot](https://raw.githubusercontent.com/shaishab316/xommit/refs/heads/vscode_ext/images/screenshot.png)
+[https://marketplace.visualstudio.com/items?itemName=shaishab316.xommit-vscode](https://marketplace.visualstudio.com/items?itemName=shaishab316.xommit-vscode)
 
 ---
 

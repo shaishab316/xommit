@@ -7,6 +7,7 @@
   "bin": {
     "xommit": "./dist/cli.js"
   },
+  "icon": "icon.png",
   "files": [
     "dist",
     "README.md",

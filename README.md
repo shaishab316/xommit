@@ -30,14 +30,6 @@ npm i -g xommit
 npx xommit
 ```
 
-### Set Your AI Key
-
-After installation, configure your API key for AI-powered commit suggestions:
-
-```bash
-xommit setkey "YOUR_GEMINI_KEY"
-```
-
 ---
 
 ## Usage
@@ -53,6 +45,8 @@ The tool will:
 1. Analyze staged git changes.
 2. Generate a meaningful commit message using AI.
 3. Prompt you to accept, edit, or regenerate the commit message.
+4. Stage and push the changes to your remote repository.
+5. Also use gitmojis if configured.
 
 ### Example
 
@@ -71,12 +65,9 @@ contributing guidelines.
 
 ## CLI Options
 
-```bash
-xommit --help
-```
-
-- `--help` — Display CLI help.
-- `--version` — Display CLI version.
+- `xommit config` - open configuration file in your editor.
+- `xommit set <key> <value>` - set a configuration value.
+- `xommit get <key>` - get a configuration value.
 
 ---
 
@@ -96,7 +87,7 @@ Build the project:
 npm run build
 ```
 
-Run in development mode (with watch):
+Run in development mode:
 
 ```bash
 npm run dev

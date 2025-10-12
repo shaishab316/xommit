@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { getDiff } from './git';
-import { getApiKey } from './config';
+import config from './config';
+import { initPrompt, showSpinner } from './ui';
 
 const CHUNK_SIZE = 7000;
 const AI_API_ENDPOINT =
@@ -11,8 +12,11 @@ export async function generateCommitMessage(): Promise<string> {
 
   if (!diff) return 'chore: update files';
 
-  const apiKey = getApiKey();
-  if (!apiKey) throw new Error('API key not found');
+  await initPrompt();
+
+  const genSpinner = showSpinner('Generating AI commit message...');
+
+  const apiKey = config.get('apikey');
 
   // Split diff into safe chunks
   const chunks = [];
@@ -44,8 +48,8 @@ Return only the summary.`;
 
     // Step 2: generate final commit message using summaries
     const finalPrompt = `Based on the following summaries of code changes, generate a concise, professional git commit message.
-
-Follow conventional commit format (feat:, fix:, docs:, style:, refactor:, test:, chore:), gitmoji etc. Keep semantic prefix first, :gitmoji: after the colon. then a " ".
+${config.get('gitmoji') ? 'also use gitmoji' : ''}
+Follow conventional commit format (feat:, fix:, docs:, style:, refactor:, test:, chore:).
 Keep the first line under 72 characters.
 If needed, include a detailed description after a blank line.
 
@@ -75,5 +79,7 @@ Return ONLY the commit message, nothing else.`;
   } catch (err: any) {
     console.error('AI API Error:', err.message);
     return `chore: update ${type} files`;
+  } finally {
+    genSpinner.stop();
   }
 }

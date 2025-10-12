@@ -55,8 +55,8 @@ async function getConfig(
 	const config = vscode.workspace.getConfiguration('xommit');
 
 	let apiKey =
-		context.globalState.get<string>('apiKey') ||
-		config.get<string>('apiKey') ||
+		context.globalState.get<string>('xommit.apikey') ||
+		config.get<string>('xommit.apikey') ||
 		'';
 	const useGitmoji = config.get<boolean>('useGitmoji', true);
 	const autoStage = config.get<boolean>('autoStage', true);
@@ -71,7 +71,7 @@ async function getConfig(
 			})) || '';
 
 		if (apiKey) {
-			await context.globalState.update('apiKey', apiKey);
+			await context.globalState.update('xommit.apikey', apiKey);
 		} else {
 			throw new Error('API Key is required');
 		}
@@ -86,11 +86,11 @@ async function configureExtension(context: vscode.ExtensionContext) {
 		password: true,
 		ignoreFocusOut: true,
 		placeHolder: 'AIzaSy...',
-		value: context.globalState.get<string>('apiKey') || '',
+		value: context.globalState.get<string>('xommit.apikey') || '',
 	});
 
 	if (apiKey) {
-		await context.globalState.update('apiKey', apiKey);
+		await context.globalState.update('xommit.apikey', apiKey);
 		vscode.window.showInformationMessage('API Key saved successfully!');
 	}
 

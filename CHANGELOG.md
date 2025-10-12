@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/shaishab316/xommit/compare/v1.3.0...v1.4.0) (2025-10-12)
+
+
+### Features
+
+* Introduce config command & improve config management ([fcef9c2](https://github.com/shaishab316/xommit/commit/fcef9c23fc17f1adf85bf92e4173df964d008a98))
+
 # [1.3.0](https://github.com/shaishab316/xommit/compare/v1.2.0...v1.3.0) (2025-10-11)
 
 

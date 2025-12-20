@@ -1,4 +1,4 @@
-# xommit
+# xommit (deprecated)
 
 [![npm version](https://img.shields.io/npm/v/xommit.svg)](https://www.npmjs.com/package/xommit)
 [![License](https://img.shields.io/npm/l/xommit.svg)](https://github.com/shaishab316/xommit/blob/main/LICENSE)
